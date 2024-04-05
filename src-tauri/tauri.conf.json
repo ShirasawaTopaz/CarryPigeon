@@ -1,7 +1,7 @@
 {
   "productName": "CarryPigeon",
-  "version": "0.0.0",
-  "identifier": "com.tauri.dev",
+  "version": "0.0.1",
+  "identifier": "org.carrypigeon.client",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -16,13 +16,6 @@
         "height": 420,
         "resizable": false,
         "visible": true
-      },
-      {
-        "title": "CarryPigeon",
-        "label": "chat",
-        "width": 800,
-        "height": 600,
-        "visible": false
       }
     ],
     "security": {

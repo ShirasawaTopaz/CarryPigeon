@@ -1,5 +1,5 @@
 use tauri::Error;
-use anyhow::{Result, anyhow};
+use anyhow::{anyhow, Result};
 
 async fn login_function() -> Result<(),Error>{
     let matcher= true;
