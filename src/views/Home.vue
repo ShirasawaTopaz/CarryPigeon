@@ -34,6 +34,7 @@ export default {
       //app_window.hide();
       //app_window.setResizable(true);
       //app_window.setSize(new LogicalSize(600, 800));
+      //app_window.setResizable(false);
       //app_window.show();
 
       // goto /chat
