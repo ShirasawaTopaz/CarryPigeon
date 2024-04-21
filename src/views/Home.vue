@@ -7,7 +7,7 @@ const passwd = ref("");
 
 <script lang="ts">
 import { invoke } from "@tauri-apps/api/core";
-//import { getCurrent, LogicalSize } from "@tauri-apps/api/window";
+import { getCurrent, LogicalSize } from "@tauri-apps/api/window";
 
 export default {
   data() {
@@ -30,11 +30,11 @@ export default {
       // 以下代码应该是可以正常执行的但是由于tauri2在beta尝试破坏性操作
       // 即突然上多webview支持导致这些基础操作全部爆炸
       // 以下reset window代码会在发布release后重新加入
-      //let app_window = await getCurrent();
+      let app_window = await getCurrent();
       //app_window.hide();
-      //app_window.setResizable(true);
-      //app_window.setSize(new LogicalSize(600, 800));
-      //app_window.setResizable(false);
+      app_window.setResizable(true);
+      app_window.setSize(new LogicalSize(600, 800));
+      app_window.setResizable(false);
       //app_window.show();
 
       // goto /chat
@@ -52,14 +52,20 @@ export default {
     </el-avater>
   </div>
   <div class="login">
-    <el-input v-model="account" style="width: 240px " placeholder="Please input account" />
+    <div style="margin: 3px" />
+    <el-input v-model="account" style="width: 240px" placeholder="Please input account" />
+    <div style="margin: 5px" />
     <el-input v-model="passwd" style="width:240px" type="password" placeholder="Please input password" />
+    <div style="margin: 5px" />
     <el-button type="primary" @click="login()" :loading="loginButtonLoadingStatus" style="width: 240px"> {{ loginButtonText }} </el-button>
   </div>
 </template>
 
 
-<style>
+<style lang="scss">
+body{
+  background-color: black;
+}
 .title {
   -webkit-user-select: none;
   /* Safari+Chromium */
@@ -80,11 +86,7 @@ export default {
 }
 </style>
 
-<style scoped>
-.bg-color{
-  background-color: black;
-}
-
+<style lang="scss" scoped>
 .avatar {
   display: grid;
   text-align: center;
