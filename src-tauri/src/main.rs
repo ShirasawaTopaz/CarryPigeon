@@ -3,9 +3,9 @@
 
 use anyhow::Result;
 
-use carrypigeon::service::account::{login,__cmd__login};
+use carrypigeon::service::account::{__cmd__login, login};
 
-fn main() -> Result<()>{
+fn main() -> Result<()> {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
         .invoke_handler(tauri::generate_handler![login])

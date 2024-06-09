@@ -11,11 +11,13 @@
   "app": {
     "windows": [
       {
+        "label": "main",
         "title": "CarryPigeon",
-        "width": 320,
-        "height": 420,
-        "resizable": false,
-        "visible": true
+        "width": 930,
+        "height": 610,
+        "resizable": true,
+        "visible": true,
+        "center": true
       }
     ],
     "security": {

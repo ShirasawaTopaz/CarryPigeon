@@ -1,11 +1,11 @@
-use tauri::Error;
 use anyhow::{anyhow, Result};
+use tauri::Error;
 
-async fn login_function() -> Result<(),Error>{
-    let matcher= true;
-    if matcher{
+async fn login_function() -> Result<(), Error> {
+    let matcher = true;
+    if matcher {
         //TODO
-    }else{
+    } else {
         return Err(anyhow!("wrong").into());
     }
     Ok(())
@@ -13,7 +13,7 @@ async fn login_function() -> Result<(),Error>{
 
 //tauri::command definition
 #[tauri::command]
-pub async fn login() -> Result<(),Error>{
+pub async fn login() -> Result<(), Error> {
     login_function().await?;
     Ok(())
 }
